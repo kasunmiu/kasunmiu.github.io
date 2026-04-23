@@ -1,27 +1,26 @@
 import styles from './Footer.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopyright, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCopyright, faHeart, faUser, faBriefcase, faEnvelope, faHandsBound, faHandshake } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // ─── Edit footer columns here ──────────────────
 const columns = [
   {
-    title: 'Solutions',
+    title: 'Sitemap',
     links: [
-      { label: 'Services', href: 'https://services.yoogameart.com' },
-      { label: 'Assets', href: 'https://assets.yoogameart.com' },
-      { label: 'Learn', href: 'https://learn.yoogameart.com' },
+      { label: 'About',   href: '#about',    icon: faUser },
+      { label: 'Work',    href: '#work',     icon: faBriefcase },
+      { label: 'Contact', href: '#contact',  icon: faHandshake },
     ],
   },
   {
-    title: 'Connect',
+    title: 'Socials',
     links: [
-      { label: 'Email', href: 'mailto:yoogameart@gmail.com' },
-      { label: 'Itch.io', href: 'https://yoogameart.itch.io/' },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/company/yoogameart' },
-      { label: 'X', href: 'https://x.com/YooGameArt' },
-      { label: 'BlueSky', href: 'https://bsky.app/profile/yoogameart.bsky.social' },
-      { label: 'YouTube', href: 'https://www.youtube.com/@YooGameArt' },
+      { label: 'Email',    href: 'mailto:kasunmiu@gmail.com',              icon: faEnvelope },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/kasun-miuranga', icon: faLinkedin },
+      { label: 'X',        href: 'https://x.com/KasunMiu',                 icon: faXTwitter },
+      { label: 'YouTube',  href: 'https://www.youtube.com/@KasunMiu',      icon: faYoutube },
     ],
   },
 ];
@@ -51,7 +50,7 @@ export default function Footer() {
             </div>
 
             <p className={styles.tagline}>
-              Collection of services focused on game development, supporting brands, creators, and developers.
+              A creator building worlds, systems, and solutions, always looking for problems to solve.
             </p>
           </div>
 
@@ -67,6 +66,7 @@ export default function Footer() {
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className={styles.colLink}
                   >
+                    <FontAwesomeIcon icon={link.icon} className={styles.linkIcon} />
                     {link.label}
                   </a>
                 ))}
@@ -81,7 +81,7 @@ export default function Footer() {
         {/* Bottom: copyright + badge */}
         <div className={styles.bottom}>
           <p className={styles.copy}>
-            <span className={styles.accentDot}>  <FontAwesomeIcon icon={faCopyright} /></span> {year} Kasun Miuranga.
+            <span className={styles.accentDot}><FontAwesomeIcon icon={faCopyright} /></span> {year} Kasun Miuranga.
             All rights reserved.
           </p>
           <span className={styles.badge}>Made with <FontAwesomeIcon icon={faHeart} /></span>

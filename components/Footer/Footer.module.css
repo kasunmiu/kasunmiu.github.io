@@ -89,6 +89,12 @@
   color: var(--color-accent);
 }
 
+.linkIcon {
+  width: 0.85em;
+  margin-right: 0.45rem;
+  opacity: 0.75;
+}
+
 /* Divider */
 .divider {
   width: 100%;
