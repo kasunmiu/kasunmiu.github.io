@@ -1,0 +1,33 @@
+/* ─────────────────────────────────────────────
+   THEME — change design tokens here
+   ───────────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --color-bg: #0a0f1a;
+  --color-surface: #111827;
+  --color-accent: #00a6ff;
+  --color-accent-dim: rgba(0, 207, 255, 0.12);
+  --color-text: #f0f4ff;
+  --color-text-muted: rgba(240, 244, 255, 0.45);
+  --color-border: rgba(255, 255, 255, 0.15);
+  --color-card-overlay: rgba(8, 12, 20, 0.62);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-section: 6rem;
+  --space-gap: 1.5rem;
+  --card-radius: 20px;
+
+  /* Animation */
+  --hover-duration: 0.32s;
+  --hover-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* Card sizes */
+  --card-height: 420px;
+  --card-height-mobile: 300px;
+}
