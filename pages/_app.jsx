@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false;
 import { useEffect } from 'react';
+import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -22,5 +23,11 @@ export default function App({ Component, pageProps }) {
     };
   }, []);
 
-  return <Component {...pageProps} />;
+  return <>
+    <Head>
+      <title>Kasun Miu</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Component {...pageProps} />
+  </>;
 }

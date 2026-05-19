@@ -7,26 +7,25 @@ const PROJECTS = [
         id: 1,
         title: 'Miusoft',
         category: 'Game Development',
-        description: 'A short description of what this project is about — what problem it solves or what experience it creates.',
-        tags: ['Unity', 'C#', 'Multiplayer'],
-        href: '/projects/miusoft',
-        // image: '/images/alpha.jpg',   ← drop your screenshot here
+        description: 'This is where I publish my game projects.',
+        href: 'https://miusoftgames.github.io/',
+        image: '/images/miusoft.png'
     },
     {
         id: 2,
         title: 'Godot Sensei',
         category: 'Educational',
-        description: 'A short description of what this project is about — what problem it solves or what experience it creates.',
-        tags: ['Next.js', 'Node.js', 'API'],
-        href: '/projects/godotsensei',
+        description: 'Tutorials and learning content for Godot developers.',
+        href: 'https://godotsensei.github.io/',
+        image: '/images/godotsensei.png'
     },
     {
         id: 3,
         title: 'Yoo Game Art',
         category: 'Services',
-        description: 'A short description of what this project is about — what problem it solves or what experience it creates.',
-        tags: ['Unity', 'iOS', 'Android'],
-        href: '/projects/yoogameart',
+        description: 'Resources and assets for game development.',
+        href: 'https://yoogameart.github.io/',
+        image: '/images/yoogameart.png'
     },
 ];
 // ─────────────────────────────────────────────────────────────────────────
@@ -38,9 +37,9 @@ export default function Projects() {
                 {/* Section header */}
                 <div className={styles.header}>
                     <span className={styles.label}>Projects</span>
-                    <h2 className={styles.title}>Creator Of,</h2>
+                    <h2 className={styles.title}>Creator of</h2>
                     <p className={styles.subtitle}>
-                        Some of my favorite personal projects done so far. 
+                        Some of my favorite personal projects so far.
                     </p>
                 </div>
 
@@ -69,6 +68,7 @@ function ProjectCard({ project, index }) {
     return (
         <Link
             href={project.href}
+            target='_blank'
             className={styles.card}
             style={{ animationDelay: `${index * 0.1}s` }}
         >
@@ -89,7 +89,7 @@ function ProjectCard({ project, index }) {
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.cardDesc}>{project.description}</p>
 
-              {/*   <div className={styles.cardTags}>
+                {/*   <div className={styles.cardTags}>
                     {project.tags.map(tag => (
                         <span key={tag} className={styles.tag}>{tag}</span>
                     ))}
