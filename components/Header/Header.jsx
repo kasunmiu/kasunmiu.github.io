@@ -5,9 +5,9 @@ import Image from 'next/image';
 
 // ─── Edit nav links here ───────────────────────
 const navLinks = [
-  { label: 'Games', href: '#games', target: "" },
-  { label: 'About', href: '#about', target: "" },
-  { label: 'Contact', href: '#contact', target: "" },
+  { label: 'Projects', href: '#projects', target: "" },
+  { label: 'Reviews', href: '#reviews', target: "" },
+  /* { label: 'Contact', href: '#contact', target: "" }, */
 ];
 
 const ctaLabel = 'Contact';

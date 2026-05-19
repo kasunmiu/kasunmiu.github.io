@@ -2,25 +2,27 @@ import styles from './Footer.module.css';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopyright, faHeart, faUser, faBriefcase, faEnvelope, faHandsBound, faHandshake } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faGithub, faInstagram, faLinkedin, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 // ─── Edit footer columns here ──────────────────
 const columns = [
   {
     title: 'Sitemap',
     links: [
-      { label: 'About',   href: '#about',    icon: faUser },
-      { label: 'Work',    href: '#work',     icon: faBriefcase },
-      { label: 'Contact', href: '#contact',  icon: faHandshake },
+      { label: 'Projects', href: '#projects', icon: faBriefcase },
+      { label: 'Reviews', href: '#reviews', icon: faHandshake },
     ],
   },
   {
     title: 'Socials',
     links: [
-      { label: 'Email',    href: 'mailto:kasunmiu@gmail.com',              icon: faEnvelope },
-      { label: 'LinkedIn', href: 'https://www.linkedin.com/kasun-miuranga', icon: faLinkedin },
-      { label: 'X',        href: 'https://x.com/KasunMiu',                 icon: faXTwitter },
-      { label: 'YouTube',  href: 'https://www.youtube.com/@KasunMiu',      icon: faYoutube },
+      { label: 'Email', href: 'mailto:kasunmiu@gmail.com', icon: faEnvelope },
+      { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kasun-miuranga/', icon: faLinkedin },
+      { label: 'YouTube', href: 'https://www.youtube.com/@KasunMiu', icon: faYoutube },
+      { label: 'Instagram', href: 'https://www.instagram.com/kasun.miu', icon: faInstagram },
+      { label: 'Facebook', href: 'https://web.facebook.com/kasunmiuranga.themiu', icon: faFacebook },
+      /* { label: 'Github', href: 'https://github.com/TheMIU', icon: faGithub }, */
+      /* { label: 'X', href: 'https://x.com/KasunMiu', icon: faXTwitter }, */
     ],
   },
 ];

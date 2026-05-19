@@ -1,6 +1,8 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   width: 100%;
   border-bottom: 1px solid var(--color-border);
@@ -152,6 +154,7 @@
 }
 
 @media (max-width: 720px) {
+
   .nav,
   .cta {
     display: none;

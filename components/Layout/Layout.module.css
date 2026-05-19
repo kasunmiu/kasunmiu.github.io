@@ -7,13 +7,7 @@
 .main {
   flex: 1;
   width: 100%;
-  max-width: 1160px;
+  /* max-width: 1160px; */
   margin: 0 auto;
-  padding: 0 2rem;
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 0 1.25rem;
-  }
+  /* padding: 0 2rem; */
 }
