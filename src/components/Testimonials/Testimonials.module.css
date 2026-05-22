@@ -109,6 +109,7 @@
   white-space: pre-line;
 }
 
+
 .openQuote,
 .closeQuote {
   color: var(--color-blue);
@@ -120,6 +121,8 @@
 
 .openQuote {
   margin-right: 4px;
+  transform: scaleX(-1);
+  display: inline-block;
 }
 
 .closeQuote {

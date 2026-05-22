@@ -30,9 +30,9 @@ export default function Testimonials() {
               <div className={styles.quoteIcon}>"</div>
 
               <blockquote className={styles.quote}>
-                <span className={styles.openQuote}>"</span>
+                {/* <span className={styles.openQuote}>"</span> */}
                 {t.quote}
-                <span className={styles.closeQuote}>"</span>
+                {/* <span className={styles.closeQuote}>"</span> */}
               </blockquote>
 
               <a href={t.link} target='_blank'>

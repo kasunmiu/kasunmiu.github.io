@@ -5,8 +5,8 @@ const PROJECTS = [
   {
     id: 1,
     title: 'Miusoft',
-    category: 'Game Development',
-    description: 'This is where I publish my game projects — indie experiences built with passion.',
+    category: 'Game Dev',
+    description: 'This is where I publish my game projects, indie experiences built with passion.',
     href: 'https://miusoftgames.github.io/',
     image: '/images/miusoft.png',
     number: '01',
@@ -22,12 +22,48 @@ const PROJECTS = [
   },
   {
     id: 3,
+    title: 'Godot සිංහල',
+    category: 'Educational',
+    description: 'Sinhala medium tutorials and learning content for Godot developers.',
+    href: 'https://godotsinhala.github.io/',
+    image: '/images/godotsensei.png',
+    number: '03',
+  },
+  {
+    id: 4,
     title: 'Yoo Game Art',
     category: 'Services',
-    description: 'Professional game art resources and assets for indie developers.',
+    description: 'Game art resources and assets for game developers.',
     href: 'https://yoogameart.github.io/',
     image: '/images/yoogameart.png',
-    number: '03',
+    number: '04',
+  },
+  {
+    id: 5,
+    title: 'Miu Plays',
+    category: 'Gaming',
+    description: 'Gameplay reviews and support for indie developers.',
+    href: 'https://www.youtube.com/@MiuPlayGames',
+    image: '/images/miuplays.png',
+    number: '05',
+  },
+  {
+    id: 6,
+    title: 'Graphic Miu',
+    category: 'Services',
+    description: 'Freelancer client design portfolio (currently inactive).',
+    href: 'https://www.freelancer.com/u/graphicmiu',
+    image: '/images/graphicmiu.png',
+    number: '06',
+  },
+  {
+    id: 7,
+    title: 'Miu Craft',
+    category: 'Art',
+    description: 'Older artworks and creative projects (currently inactive).',
+    href: 'https://www.youtube.com/@miucraft7559',
+    image: '/images/miucraft.png',
+    number: '07',
   },
 ];
 
@@ -49,7 +85,7 @@ export default function Projects() {
           ))}
         </div>
 
-       {/*  <div className={styles.footer}>
+        {/*  <div className={styles.footer}>
           <p className={styles.footerNote}>More projects coming soon</p>
         </div> */}
       </div>
@@ -83,7 +119,7 @@ function ProjectCard({ project, index }) {
           <span className={styles.number}>{project.number}</span>
           <span className={styles.arrow}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
         </div>

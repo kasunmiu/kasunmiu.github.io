@@ -64,6 +64,7 @@
   display: flex;
   list-style: none;
   gap: 0.25rem;
+  justify-content: center;
 }
 
 .navLink {
