@@ -33,7 +33,7 @@ const COLUMNS = [
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kasun-miuranga/', icon: faLinkedin },
       { label: 'YouTube', href: 'https://www.youtube.com/@KasunMiu', icon: faYoutube },
       { label: 'Instagram', href: 'https://www.instagram.com/kasun.miu', icon: faInstagram },
-      { label: 'Facebook', href: 'https://web.facebook.com/kasunmiuranga.themiu', icon: faFacebook },
+      { label: 'Facebook', href: 'https://web.facebook.com/kasun.miu', icon: faFacebook },
       { label: 'WhatsApp', href: 'https://wa.me/94764958373', icon: faWhatsapp },
     ],
   },

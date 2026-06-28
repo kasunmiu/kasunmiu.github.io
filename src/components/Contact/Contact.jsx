@@ -16,7 +16,7 @@ const SOCIALS = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/kasun-miuranga', icon: faLinkedin },
   { label: 'YouTube', href: 'https://youtube.com/@KasunMiu', icon: faYoutube },
   { label: 'Instagram', href: 'https://instagram.com/kasun.miu', icon: faInstagram },
-  { label: 'Facebook', href: 'https://facebook.com/kasunmiuranga.themiu', icon: faFacebook },
+  { label: 'Facebook', href: 'https://facebook.com/kasun.miu', icon: faFacebook },
   { label: 'WhatsApp', href: 'https://wa.me/94764958373', icon: faWhatsapp },
 ];
 
