@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle, faWrench, faPause } from '@fortawesome/free-solid-svg-icons';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import BackToTop from '@/components/BackToTop/BackToTop';
@@ -151,7 +153,22 @@ export default function ProjectsClient() {
   );
 }
 
+function getStatusIcon(status) {
+  if (status === 'Live') return faCircle;
+  if (status === 'Working') return faWrench;
+  return faPause;
+}
+
+function getStatusClass(status) {
+  if (status === 'Live') return styles.statusLive;
+  if (status === 'Working') return styles.statusConstruction;
+  return styles.statusInactive;
+}
+
 function ProjectCard({ project, index }) {
+  const statusIcon = getStatusIcon(project.status);
+  const statusClass = getStatusClass(project.status);
+
   return (
     <a
       href={project.href}
@@ -170,6 +187,18 @@ function ProjectCard({ project, index }) {
         )}
         <div className={styles.imageOverlay} />
         <span className={styles.category}>{project.category}</span>
+        {project.status && (
+          <span className={`${styles.statusBadge} ${statusClass}`}>
+            <FontAwesomeIcon
+              icon={statusIcon}
+              style={{
+                width: project.status === 'Live' ? 7 : 9,
+                height: project.status === 'Live' ? 7 : 9,
+              }}
+            />
+            {project.status}
+          </span>
+        )}
       </div>
 
       <div className={styles.cardBody}>

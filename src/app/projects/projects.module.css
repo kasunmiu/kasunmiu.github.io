@@ -247,17 +247,52 @@
 
 .category {
   position: absolute;
-  bottom: 0.75rem;
-  left: 0.75rem;
-  background: rgba(255,255,255,0.92);
+  bottom: 0.65rem;
+  left: 0.65rem;
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(8px);
   color: var(--color-ink-mid);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
+  padding: 0.2rem 0.55rem;
   border-radius: 99px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.statusBadge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 99px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+.statusLive {
+  background: rgba(240, 253, 244, 0.95);
+  color: #15803d;
+  border: 1px solid rgba(187, 247, 208, 0.9);
+}
+
+.statusConstruction {
+  background: rgba(254, 252, 232, 0.95);
+  color: #b45309;
+  border: 1px solid rgba(254, 240, 138, 0.9);
+}
+
+.statusInactive {
+  background: rgba(241, 245, 249, 0.95);
+  color: #64748b;
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 /* Body */
