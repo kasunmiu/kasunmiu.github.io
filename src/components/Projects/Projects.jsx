@@ -12,7 +12,7 @@ export default function Projects() {
           <span className={styles.label}>Portfolio</span>
           <h2 className={styles.title}>Creator of</h2>
           <p className={styles.subtitle}>
-            Personal projects, each a different world.
+            a collection of personal, client, and charity projects, <br />made with love.
           </p>
         </div>
 

@@ -8,25 +8,23 @@ import BackToTop from '@/components/BackToTop/BackToTop';
 import { PROJECTS } from '@/data/projects';
 import styles from './projects.module.css';
 
+const FILTER_CATEGORIES = ['All', 'Personal Projects', 'Client Work', 'Charity'];
+
 export default function ProjectsClient() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Extract unique categories
-  const categories = useMemo(() => {
-    const set = new Set(PROJECTS.map((p) => p.category));
-    return ['All', ...Array.from(set)];
-  }, []);
-
-  // Filter projects based on category and search query
+  // Filter projects based on projectType and search query
   const filteredProjects = useMemo(() => {
     return PROJECTS.filter((project) => {
+      const type = project.projectType || 'Personal Projects';
       const matchesCategory =
-        selectedCategory === 'All' || project.category === selectedCategory;
+        selectedCategory === 'All' || type === selectedCategory;
       const matchesSearch =
         project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        project.category.toLowerCase().includes(searchQuery.toLowerCase());
+        project.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        type.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery]);
@@ -56,7 +54,7 @@ export default function ProjectsClient() {
             <span className={styles.badge}>Portfolio & Work</span>
             <h1 className={styles.title}>All Projects</h1>
             <p className={styles.subtitle}>
-              Explore my complete collection of game projects, educational content, creative endeavors, and digital services.
+              A showcase of personal projects, client collaborations, and charity work. Each one made with love.
             </p>
           </div>
 
@@ -88,7 +86,7 @@ export default function ProjectsClient() {
             </div>
 
             <div className={styles.filters}>
-              {categories.map((cat) => (
+              {FILTER_CATEGORIES.map((cat) => (
                 <button
                   key={cat}
                   className={`${styles.filterBtn} ${selectedCategory === cat ? styles.filterBtnActive : ''
