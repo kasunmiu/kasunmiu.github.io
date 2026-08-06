@@ -62,24 +62,21 @@ function ProjectCard({ project, index }) {
           <img src={project.image} alt={project.title} />
         ) : (
           <div className={styles.imagePlaceholder}>
-            <span>{project.number}</span>
+            <span>{project.title.charAt(0)}</span>
           </div>
         )}
         <div className={styles.imageOverlay} />
-        <span className={styles.category}>{project.category}</span>
       </div>
 
       <div className={styles.cardBody}>
         <div className={styles.cardTop}>
-          <span className={styles.number}>{project.number}</span>
+          <h3 className={styles.cardTitle}>{project.title}</h3>
           <span className={styles.arrow}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </span>
         </div>
-        <h3 className={styles.cardTitle}>{project.title}</h3>
-        <p className={styles.cardDesc}>{project.description}</p>
       </div>
     </a>
   );

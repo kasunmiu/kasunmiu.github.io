@@ -150,10 +150,10 @@
 
 /* Body */
 .cardBody {
-  padding: 1.25rem 1.4rem 1.5rem;
+  padding: 1.1rem 1.25rem 1.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  justify-content: center;
   flex: 1;
 }
 
@@ -161,6 +161,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .number {
