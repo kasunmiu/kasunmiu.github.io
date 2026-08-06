@@ -21,9 +21,9 @@ const COLUMNS = [
   {
     title: 'Sitemap',
     links: [
-      { label: 'Projects', href: '#projects', icon: faBriefcase },
-      { label: 'Reviews', href: '#reviews', icon: faHandshake },
-      { label: 'Contact', href: '#contact', icon: faEnvelope },
+      { label: 'Projects', href: '/projects', icon: faBriefcase },
+      { label: 'Reviews', href: '/#reviews', icon: faHandshake },
+      { label: 'Contact', href: '/#contact', icon: faEnvelope },
     ],
   },
   {

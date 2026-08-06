@@ -5,9 +5,9 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 
 const NAV_LINKS = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'Reviews', href: '#reviews' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Reviews', href: '/#reviews' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Header() {
@@ -33,15 +33,15 @@ export default function Header() {
           <ul>
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <a href={link.href} className={styles.navLink}>
+                <Link href={link.href} className={styles.navLink}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
-        <a href="#contact" className={styles.cta}>Let's Talk</a>
+        <Link href="/#contact" className={styles.cta}>Let's Talk</Link>
 
         <button
           className={`${styles.burger} ${open ? styles.burgerOpen : ''}`}
@@ -58,18 +58,18 @@ export default function Header() {
         aria-label="Mobile navigation"
       >
         {NAV_LINKS.map((link) => (
-          <a
+          <Link
             key={link.label}
             href={link.href}
             className={styles.drawerLink}
             onClick={() => setOpen(false)}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
-        <a href="#contact" className={styles.drawerCta} onClick={() => setOpen(false)}>
+        <Link href="/#contact" className={styles.drawerCta} onClick={() => setOpen(false)}>
           Let's Talk →
-        </a>
+        </Link>
       </nav>
     </header>
   );

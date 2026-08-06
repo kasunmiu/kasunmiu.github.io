@@ -191,22 +191,154 @@
   line-height: 1.6;
 }
 
-/* Footer */
-.footer {
+/* See All Projects Button */
+.seeAllWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+.seeAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 2rem;
+  background: var(--color-blue);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 99px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.seeAllBtn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+}
+
+.seeAllBtn svg {
+  transition: transform 0.25s ease;
+}
+
+.seeAllBtn:hover svg {
+  transform: translateX(4px);
+}
+
+/* See All Projects Grid Card (for Mobile / Small Screens) */
+.seeAllCard {
+  background: linear-gradient(135deg, var(--color-blue-xlight), #ffffff);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-blue-mid);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 0.85rem;
+  min-height: 100%;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.seeAllCard:hover {
+  transform: translateY(-4px);
+  border-style: solid;
+  border-color: var(--color-blue);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, var(--color-blue-light), #ffffff);
+}
+
+.seeAllCardInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-top: 3rem;
+  gap: 0.5rem;
 }
 
-.footerNote {
-  font-size: 0.875rem;
-  color: var(--color-ink-muted);
-  font-style: italic;
+.seeAllIconBadge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-@media (max-width: 900px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
+.seeAllCard:hover .seeAllIconBadge {
+  transform: scale(1.1);
 }
 
-@media (max-width: 600px) {
-  .grid { grid-template-columns: 1fr; }
+.seeAllCardTitle {
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+  font-weight: 800;
+  color: var(--color-ink);
+  line-height: 1.25;
+}
+
+.seeAllCardDesc {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-blue);
+}
+
+/* Visibility Rules & Responsive Layout */
+@media (min-width: 769px) {
+  .seeAllCard {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+
+  .seeAllWrapper {
+    display: none;
+  }
+
+  .seeAllCard {
+    display: flex;
+  }
+
+  .cardBody {
+    padding: 0.9rem 0.85rem 1rem;
+    gap: 0.35rem;
+  }
+
+  .cardTitle {
+    font-size: clamp(0.98rem, 3.6vw, 1.2rem);
+  }
+
+  .cardDesc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .category {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .section {
+    padding: clamp(3rem, 6vw, 4rem) 0.85rem;
+  }
 }

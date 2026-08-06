@@ -1,73 +1,10 @@
 import Link from 'next/link';
 import styles from './Projects.module.css';
-
-const PROJECTS = [
-  {
-    id: 1,
-    title: 'Miusoft',
-    category: 'Game Dev',
-    description: 'This is where I publish my game projects, indie experiences built with passion.',
-    href: 'https://miusoftgames.github.io/',
-    image: '/images/miusoft.png',
-    number: '01',
-  },
-  {
-    id: 2,
-    title: 'Godot Sensei',
-    category: 'Educational',
-    description: 'Tutorials and learning content for Godot developers of all skill levels.',
-    href: 'https://godotsensei.github.io/',
-    image: '/images/godotsensei.png',
-    number: '02',
-  },
-  {
-    id: 3,
-    title: 'Godot සිංහල',
-    category: 'Educational',
-    description: 'Sinhala medium tutorials and learning content for Godot developers.',
-    href: 'https://godotsinhala.github.io/',
-    image: '/images/godotsensei.png',
-    number: '03',
-  },
-  {
-    id: 4,
-    title: 'Miu Plays',
-    category: 'Gaming',
-    description: 'Gameplay reviews and support for indie developers.',
-    href: 'https://miuplays.github.io',
-    image: '/images/miuplays.png',
-    number: '04',
-  },
-  {
-    id: 5,
-    title: 'Yoo Game Art',
-    category: 'Services',
-    description: 'Game art resources and assets for game developers (under construction).',
-    href: 'https://yoogameart.github.io/',
-    image: '/images/yoogameart.png',
-    number: '05',
-  },
-  {
-    id: 6,
-    title: 'Graphic Miu',
-    category: 'Services',
-    description: 'Freelancer client design portfolio (currently inactive).',
-    href: 'https://www.freelancer.com/u/graphicmiu',
-    image: '/images/graphicmiu.png',
-    number: '06',
-  },
-  {
-    id: 7,
-    title: 'Miu Craft',
-    category: 'Art',
-    description: 'Older artworks and creative projects (currently inactive).',
-    href: 'https://www.youtube.com/@miucraft7559',
-    image: '/images/miucraft.png',
-    number: '07',
-  },
-];
+import { PROJECTS } from '@/data/projects';
 
 export default function Projects() {
+  const featuredProjects = PROJECTS.filter((p) => p.featured).slice(0, 3);
+
   return (
     <section id="projects" className={styles.section}>
       <div className={styles.container}>
@@ -80,14 +17,32 @@ export default function Projects() {
         </div>
 
         <div className={styles.grid}>
-          {PROJECTS.map((project, i) => (
+          {featuredProjects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
+
+          {/* See All Projects Card (Grid card for mobile / small screens) */}
+          <Link href="/projects" className={styles.seeAllCard}>
+            <div className={styles.seeAllCardInner}>
+              <div className={styles.seeAllIconBadge}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3 className={styles.seeAllCardTitle}>See All Projects</h3>
+            </div>
+          </Link>
         </div>
 
-        {/*  <div className={styles.footer}>
-          <p className={styles.footerNote}>More projects coming soon</p>
-        </div> */}
+        {/* See All Projects Button (Below grid for desktop screens) */}
+        <div className={styles.seeAllWrapper}>
+          <Link href="/projects" className={styles.seeAllBtn}>
+            <span>See All Projects</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
+        </div>
       </div>
     </section>
   );
