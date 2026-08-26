@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import styles from './Projects.module.css';
-import { PROJECTS } from '@/data/projects';
+import { PROJECTS, getSortedProjects } from '@/data/projects';
 
 export default function Projects() {
-  const featuredProjects = PROJECTS.filter((p) => p.featured).slice(0, 3);
+  const featuredProjects = getSortedProjects(PROJECTS)
+    .filter((p) => p.featured)
+    .slice(0, 3);
 
   return (
     <section id="projects" className={styles.section}>

@@ -310,10 +310,10 @@
   justify-content: space-between;
 }
 
-.number {
+.date {
   font-family: var(--font-display);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-ink-muted);
 }
 

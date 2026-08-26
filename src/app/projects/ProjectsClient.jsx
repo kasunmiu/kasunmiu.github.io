@@ -7,18 +7,28 @@ import { faCircle, faWrench, faPause } from '@fortawesome/free-solid-svg-icons';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import BackToTop from '@/components/BackToTop/BackToTop';
-import { PROJECTS } from '@/data/projects';
+import { PROJECTS, getSortedProjects } from '@/data/projects';
 import styles from './projects.module.css';
 
 const FILTER_CATEGORIES = ['All', 'Personal Projects', 'Client Work', 'Charity'];
+
+function formatDate(dateStr) {
+  if (!dateStr) return '';
+  const [year, month] = dateStr.split('-');
+  if (!year) return dateStr;
+  if (!month) return year;
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const monthIndex = parseInt(month, 10) - 1;
+  return `${monthNames[monthIndex] || ''} ${year}`.trim();
+}
 
 export default function ProjectsClient() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Filter projects based on projectType and search query
+  // Filter and sort projects: featured first, then latest by date
   const filteredProjects = useMemo(() => {
-    return PROJECTS.filter((project) => {
+    const filtered = PROJECTS.filter((project) => {
       const type = project.projectType || 'Personal Projects';
       const matchesCategory =
         selectedCategory === 'All' || type === selectedCategory;
@@ -29,6 +39,8 @@ export default function ProjectsClient() {
         type.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
+
+    return getSortedProjects(filtered);
   }, [selectedCategory, searchQuery]);
 
   return (
@@ -182,7 +194,7 @@ function ProjectCard({ project, index }) {
           <img src={project.image} alt={project.title} />
         ) : (
           <div className={styles.imagePlaceholder}>
-            <span>{project.number}</span>
+            <span>{project.title ? project.title.charAt(0) : ''}</span>
           </div>
         )}
         <div className={styles.imageOverlay} />
@@ -203,7 +215,7 @@ function ProjectCard({ project, index }) {
 
       <div className={styles.cardBody}>
         <div className={styles.cardTop}>
-          <span className={styles.number}>{project.number}</span>
+          <span className={styles.date}>{formatDate(project.date)}</span>
           <span className={styles.arrow}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path
