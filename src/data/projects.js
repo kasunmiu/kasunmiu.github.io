@@ -1,8 +1,20 @@
 export const PROJECTS = [
+    {
+    id: 11,
+    title: 'Notes',
+    category: 'Web',
+    projectType: 'Charity',
+    status: 'Live',
+    description: 'Software Engineering notes in සිංහල',
+    href: 'https://themiu.github.io/Notes',
+    image: '/images/notes.png',
+    date: '2023-06-18',
+    featured: false,
+  },
   {
     id: 10,
     title: 'USK Galle Website',
-    category: 'Art',
+    category: 'Web',
     projectType: 'Charity',
     status: 'Live',
     description: 'Website made for Urban Skechers Galle.',
